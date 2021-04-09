@@ -15,7 +15,7 @@ export function shutdownWatcher() {
 }
 exitHook(shutdownWatcher)
 
-export async function startDevWatcher() {
+export async function startDevWatcher(): Promise<FSWatcher> {
   shutdownWatcher()
 
   debug('starting dev watcher')
@@ -47,4 +47,6 @@ export async function startDevWatcher() {
 
   if (context.entry)
     touch(context.entry)
+
+  return watcher
 }

@@ -65,4 +65,4 @@ export const postcss = true
 
 plugin.postcss = true
 
-module.exports = plugin
+export default plugin
